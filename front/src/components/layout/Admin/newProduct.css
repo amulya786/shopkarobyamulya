@@ -1,0 +1,86 @@
+.createProductForm {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.createProductForm>h3 {
+    font-size: larger;
+    color: rgba(0, 0, 0, 0.627);
+}
+
+.createProductForm>div {
+    background-color: white;
+}
+
+.createProductForm>div>svg {
+    padding-right: 0.5rem;
+    transform: translateX(0.2rem) translateY(30%);
+}
+
+.textAreaDiv>svg {
+    transform: translateY(-2.5rem) !important;
+}
+
+.createProductForm input {
+    width: 20rem;
+    outline: none;
+    height: 2rem;
+    border: none;
+}
+
+.createProductForm select {
+    width: 20rem;
+    outline: none;
+    height: 2rem;
+    border: none;
+}
+
+#imageFile {
+    padding: 0.2rem 1rem;
+    width: 20rem;
+}
+
+.previewImage {
+    width: 6rem;
+    padding: 1rem;
+}
+
+.createProductFormImage {
+    width: 90%;
+    height: fit-content;
+    border-radius: 10px;
+    margin: 1rem;
+    background-color: rgba(0, 0, 0, 0.177) !important;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.createProdcutBtn {
+    font-size: large;
+    border: 1px solid rgba(0, 0, 0, 0.158) !important;
+    padding: 0.5rem 2rem;
+    color: grey;
+    border-radius: 5px;
+}
+
+.createProdcutBtn:hover {
+    color: rgba(0, 0, 0, 0.411);
+    background-color: rgba(255, 255, 255, 0.39);
+    cursor: pointer;
+}
+
+#createFormTextArea {
+    height: 4rem;
+    width: 20rem;
+    outline: none;
+    border: none;
+}
+
+.NewProductContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

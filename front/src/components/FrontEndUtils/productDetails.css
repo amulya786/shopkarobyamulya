@@ -1,0 +1,522 @@
+.productDetailContainer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+    /* width: 90%; */
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.productImages {
+    display: flex;
+    justify-content: center;
+    width: 40em;
+    /* height: 20em; */
+    height: 25em;
+    /* border: 2px solid red; */
+}
+
+.productDetail {
+    text-align: left;
+    padding: 0.5rem;
+    width: 35em;
+    height: 25em;
+    overflow: auto;
+    border-radius: 5px;
+    border: 1Spx solid rgba(0, 0, 0, 0.108);
+}
+
+.productDetail>h2,
+.productDetail>h6 {
+    padding: 0.2rem;
+    padding-left: 0.5rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    /* justify-content: center; */
+}
+
+.price {
+    text-align: left;
+    padding-left: 1rem;
+    padding: 0.5rem;
+    color: tomato;
+}
+
+.addSubButton {
+    /* background-color: white; */
+    margin: 0.5rem;
+}
+
+.addSubButton input {
+    border: none;
+    width: 1.5rem;
+    outline: none;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+/* This is cart show css using grid system */
+
+.cart {
+    width: 90%;
+}
+
+.cartItems {
+    height: fit-content;
+    padding: 1rem;
+}
+
+.gridContainer {
+    background-color: rgba(255, 255, 255, 0.419);
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'image image image  quantity price';
+    width: 100%;
+    align-items: center;
+}
+
+.gridContainer:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.063);
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'image image image  quantity price';
+    width: 100%;
+    align-items: center;
+}
+
+.productCart {
+    height: 1rem;
+    padding: 1rem;
+}
+
+.cartHeading {
+    background-color: tomato;
+    color: white;
+    font-weight: bolder;
+}
+
+.cartImages {
+    grid-area: image;
+}
+
+.cartQuantity {
+    grid-area: quantity;
+    text-align: center;
+}
+
+.cartPrice {
+    grid-area: price;
+    text-align: right;
+}
+
+.cartImage {
+    display: flex;
+    align-items: center;
+}
+
+.totalPrice {
+    margin: 1rem;
+    display: flex;
+    justify-content: right;
+}
+
+.grandTotal {
+    width: 40%;
+}
+
+.checkout {
+    display: flex;
+    justify-content: right;
+}
+
+.checkout button {
+    padding: 0.3rem;
+    font-weight: bolder;
+    color: tomato;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.checkout button:hover {
+    color: white;
+    background-color: rgba(255, 145, 71, 0.773);
+    cursor: pointer;
+}
+
+.recipt {
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.721);
+    border-top: 3px solid tomato;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartImage h5,
+h4 {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.cartImage img {
+    width: 5rem;
+    border-radius: 2px;
+    padding: 0.5rem;
+}
+
+.addSubButton button {
+    color: white;
+    height: 22px;
+    background-color: rgba(34, 32, 32, 0.833);
+    border: none;
+}
+
+.addSubButton button:hover {
+    cursor: pointer;
+    background-color: rgb(105, 102, 102);
+}
+
+.btn button {
+    border: none;
+    padding: 8px;
+    border-radius: 15px;
+    font-weight: 400;
+    color: tomato;
+    /* background-color: rgba(236, 43, 43, 0.448); */
+}
+
+.btn button:hover {
+    background-color: rgba(205, 76, 53, 0.267);
+    cursor: pointer;
+}
+
+.inStocks {
+    color: green;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.outStocks {
+    color: rgba(255, 0, 0, 0.964);
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.carosel {
+    background-color: rgba(255, 255, 255, 0.507);
+    padding-top: 1rem;
+    width: 70%;
+    height: 21rem;
+    border-radius: 5px;
+    text-align: center;
+    /* border: 2px solid rgba(0, 0, 0, 0.43); */
+}
+
+.carosel img {
+    width: 15rem;
+    height: 18rem;
+}
+
+.ratingStars {
+    display: flex;
+    justify-content: center;
+}
+
+.reviewCont {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto auto;
+    scroll-behavior: smooth;
+    scrollbar-track-color: red;
+}
+
+.reviews {
+    font-weight: 200;
+    color: rgba(128, 128, 128, 0.485);
+}
+
+.reviewContainer {
+    margin: 1rem;
+    width: 20rem;
+    height: 20rem;
+    overflow-x: hidden;
+    overflow-y: visible;
+    border-radius: 10px;
+    border: 0.2px solid rgba(0, 0, 0, 0.285);
+}
+
+.commentReviews {
+    width: 90%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.whenNothingPreview {
+    margin: auto;
+    width: 50%;
+    font-size: smaller;
+}
+
+.profile {
+    text-align: center;
+    min-height: 0rem;
+}
+
+.profile Img {
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+    object-position: -0.6rem 31%;
+}
+
+.reviewerProfileImg {
+    width: 1rem;
+}
+
+.productImages img {
+    width: 18rem;
+    object-fit: contain;
+    /* height: 30rem; */
+    /* border: 2px solid red; */
+}
+
+.discription {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.discriptionPara {
+    text-align: justify;
+    font-size: small;
+    color: rgba(60, 55, 55, 0.807);
+    padding-left: 2rem;
+}
+
+.submitReviews {
+    margin: auto;
+    background-color: orange;
+    border: none;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.submitReviews:hover {
+    background-color: rgba(255, 166, 0, 0.684);
+    cursor: pointer;
+}
+
+.submitDialog {
+    display: flex;
+    flex-direction: column;
+}
+
+.submitDialogTextArea {
+    border: 1px solid rgba(0, 0, 0, 0.523);
+    margin: 1vmax 0;
+    outline: none;
+    padding: 1rem;
+    font: 300 1rem;
+}
+
+@media screen and (max-width:756px) {
+    .productDetailContainer {
+        font-size: 90%;
+    }
+    .reviewCont {
+        grid-template-columns: auto auto;
+    }
+    .btn button {
+        border: 1px solid tomato;
+        padding: 8px;
+        border-radius: 15px;
+        font-weight: bolder;
+        color: rgb(255, 38, 0);
+    }
+    .btn button:hover {
+        background-color: rgba(205, 76, 53, 0.267);
+        cursor: pointer;
+    }
+    /* This is cart show css using grid system */
+    .cart {
+        width: 95%;
+    }
+    .cartItems {
+        height: fit-content;
+        padding: 1rem;
+    }
+    .gridContainer {
+        background-color: rgba(255, 255, 255, 0.419);
+        display: grid;
+        grid-template-areas: 'image quantity''image  price';
+        width: 100%;
+        align-items: center;
+    }
+    .gridContainer:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.063);
+        display: grid;
+        grid-template-areas: 'image quantity''image  price';
+        width: 100%;
+        align-items: center;
+    }
+    .productCart {
+        height: 1rem;
+    }
+    .cartHeading {
+        display: none;
+        background-color: tomato;
+        color: white;
+        font-weight: bolder;
+    }
+    .cartImages {
+        grid-area: image;
+        display: flex;
+        justify-content: center;
+        font-size: bolder;
+        font-size: 1.5rem;
+    }
+    .cartQuantity {
+        grid-area: quantity;
+        text-align: center;
+    }
+    .cartPrice {
+        display: block;
+        grid-area: price;
+        font-size: bolder;
+        font-size: 1.5rem;
+        padding-right: 4rem;
+        text-align: right;
+    }
+    .cartImage {
+        display: block;
+    }
+    .totalPrice {
+        margin: 1rem;
+        display: flex;
+        font-size: 1.5rem;
+        justify-content: right;
+    }
+    .grandTotal {
+        width: 100%;
+    }
+    .checkout {
+        display: flex;
+        justify-content: center;
+    }
+    .checkout button {
+        border: 1px solid tomato;
+        padding: 0.3rem;
+        font-weight: bolder;
+        color: tomato;
+        border-radius: 5px;
+        width: 80%;
+    }
+    .checkout button:hover {
+        color: white;
+        background-color: rgba(255, 145, 71, 0.773);
+        cursor: pointer;
+    }
+    .recipt {
+        font-weight: 100;
+        color: rgba(0, 0, 0, 0.721);
+        border-top: 3px solid tomato;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .cartImage h5,
+    h4 {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+    .cartImage img {
+        width: 5rem;
+        border-radius: 2px;
+        padding: 0.5rem;
+    }
+    .addSubButton button {
+        color: white;
+        height: 22px;
+        background-color: rgba(34, 32, 32, 0.833);
+        border: none;
+    }
+    .addSubButton button:hover {
+        cursor: pointer;
+        background-color: rgb(105, 102, 102);
+    }
+    .btn button {
+        border: 1px solid tomato;
+        padding: 5px;
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+        border-radius: 15px;
+        font-weight: 600;
+        color: tomato;
+    }
+    .cartImage img {
+        width: 10rem;
+        border-radius: 2px;
+        padding: 0.5rem;
+    }
+    .addSubButton button {
+        color: white;
+        height: 22px;
+        background-color: rgba(34, 32, 32, 0.833);
+        border: none;
+    }
+    .addSubButton button:hover {
+        cursor: pointer;
+        background-color: rgb(105, 102, 102);
+    }
+}
+
+@media screen and (max-width:394px) {
+    .productDetailContainer {
+        margin: 1rem;
+        /* font-size: 1rem; */
+    }
+    .productImages {
+        height: 33em;
+    }
+    .reviewCont {
+        grid-template-columns: auto;
+    }
+    .carosel {
+        padding-top: 4rem;
+        width: 100%;
+        text-align: center;
+        /* border: 2px solid rgba(0, 0, 0, 0.43); */
+    }
+}

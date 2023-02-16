@@ -1,0 +1,58 @@
+.myOrderTable {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.myOrderUserName {
+    color: white;
+    padding: 1rem;
+    border-radius: 0px 0px 5px 5px;
+    background-color: rgba(0, 0, 0, 0.649);
+}
+
+.MuiDataGrid-row:nth-child(odd) {
+    background-color: rgba(128, 128, 128, 0.315);
+}
+
+.MuiDataGrid-row:hover {
+    background-color: rgba(57, 57, 57, 0.604);
+}
+
+.MuiDataGrid-columnHeader {
+    background-color: tomato;
+    padding: 1vmax !important;
+}
+
+
+/* processing order class starts here  */
+
+.statusSelect:nth-child(1) {
+    color: blue;
+}
+
+.statusSelect:nth-child(2) {
+    color: green;
+}
+
+.processingSelect {
+    width: 10rem;
+}
+
+.formControl button {
+    margin-top: 1rem;
+    background-color: rgba(255, 99, 71, 0.325);
+    border: 1px solid tomato;
+    color: tomato;
+}
+
+.processingOrderForm {
+    display: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.processingOrder {
+    display: flex;
+    justify-content: center;
+}

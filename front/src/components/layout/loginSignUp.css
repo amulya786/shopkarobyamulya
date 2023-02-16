@@ -1,0 +1,129 @@
+.LoginSignUpContainer {
+    width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginSignUpBox {
+    overflow: hidden;
+    padding-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.738);
+    width: 300px;
+    border-radius: 10px;
+    height: 60vh;
+}
+
+.login_signUp_toggle {
+    display: flex;
+    justify-content: space-around;
+}
+
+.login_signUp_toggle>p {
+    padding: 1rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.btnShift {
+    background-color: tomato;
+    height: 3px;
+    width: 50%;
+    border: none;
+    transition: all 0.5s;
+}
+
+.loginForm {
+    padding-top: 1rem;
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    height: 50vh;
+    /* background-color: red; */
+    transition: all 0.5s;
+}
+
+.loginBtn {
+    margin: 1rem;
+    float: right;
+}
+
+.registerForm {
+    width: 100%;
+    height: 50vh;
+    transform: translateX(-100%);
+    /* background-color: rgb(0, 255, 98); */
+    transition: all 0.5s;
+}
+
+.registerImg::file-selector-button {
+    /* color: red; */
+    width: 90%;
+    display: flex;
+    margin-bottom: 0.2rem;
+    justify-content: center;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+.registerImg {
+    display: flex;
+    /* background-color: orange; */
+    text-align-last: center;
+}
+
+.chooseFileAvatar {
+    padding: 0.5rem;
+    /* background-color: yellow; */
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.chooseFileAvatar>img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+
+#forgetPassword {
+    color: rgb(29, 29, 137);
+    text-decoration: underline;
+    margin: 1rem;
+    text-align: end;
+    font-size: small;
+}
+
+#forgetPassword:hover {
+    color: rgb(26, 26, 209);
+    cursor: pointer;
+}
+
+.shiftToRight {
+    transform: translateX(100%);
+}
+
+.shiftToNeutral {
+    transform: translateX(0%);
+}
+
+.shiftToNeutralForm {
+    transform: translateX(0%) translateY(-100%);
+}
+
+.shiftToLeft {
+    transform: translateX(-100%) translateY(100%);
+}

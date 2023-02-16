@@ -1,0 +1,43 @@
+/* porduct list Css */
+
+.productsListContainer {
+    background-color: rgba(0, 0, 0, 0.025);
+    min-height: 80vh;
+    padding-top: 2rem;
+    width: 100%;
+    border-left: 0.5px solid rgba(0, 0, 0, 0.086);
+    border-left: 0.5px solid rgba(0, 0, 0, 0.086);
+}
+
+.productListTable {
+    margin: 1rem;
+    border: none !important;
+}
+
+.productListTable div {
+    border: none !important;
+}
+
+.productListTable a {
+    color: rgba(0, 0, 0, 0.463);
+}
+
+.productListTable a:hover {
+    color: rgba(213, 77, 77, 0.726);
+}
+
+.MuiDataGrid-columnHeader div {
+    color: white;
+}
+
+.productListTable button {
+    padding-left: 0.8rem;
+    background-color: transparent;
+    border: none;
+    /* color: rgba(213, 77, 77, 0.726); */
+}
+
+.productListTable button:hover {
+    cursor: pointer;
+    color: rgba(213, 77, 77, 0.726);
+}
