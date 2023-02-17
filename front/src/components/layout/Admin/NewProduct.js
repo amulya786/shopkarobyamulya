@@ -140,6 +140,7 @@ const NewProduct = ({ categories}) => {
                                 onChange={createProductImageChange}
                                 multiple
                             />
+                            <h6>file size is less then or 100kb</h6>
                         </div>
                         <button
                             className='createProdcutBtn'

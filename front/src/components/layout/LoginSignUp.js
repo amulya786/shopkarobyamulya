@@ -102,10 +102,10 @@ function LoginSignUp() {
 
         }
     };
-    
+
     return (
         <>
-            {openAlert && <AlertComp message={msg} msgType={msgType} openAlert={setOpenAlert}/>}
+            {openAlert && <AlertComp message={msg} msgType={msgType} openAlert={setOpenAlert} />}
             <div className="container">
                 {loading ? <Loader /> : <div className="LoginSignUpContainer">
                     {forgetToggle ? <ForgetPassword /> : <div className="LoginSignUpBox">
@@ -121,7 +121,7 @@ function LoginSignUp() {
                                 <form onSubmit={loginSubmit}>
                                     <TextField required onChange={(e) => setInput({ ...input, email: e.target.value })} value={input.email} InputProps={{ startAdornment: (<InputAdornment position="start"><EmailIcon /></InputAdornment>) }} type="email" label="Email" variant="filled" style={{ margin: "25px 15px", width: "90%" }} />
                                     <TextField onChange={(e) => setInput({ ...input, pass: e.target.value })} value={input.password} required type="password" label="Password" variant="filled" style={{ margin: "25px 15px", width: "90%" }} />
-                                    <p id='forgetPassword' onClick={()=>setForgetToggle(true)}>Forget password ?</p>
+                                    <p id='forgetPassword' onClick={() => setForgetToggle(true)}>Forget password ?</p>
                                     <Stack direction="row" spacing={2} style={{ marginTop: "1rem" }} className="loginBtn">
                                         <Button variant="outlined" type='submits' color="primary" style={{ margin: "auto" }}>
                                             Login
@@ -141,6 +141,7 @@ function LoginSignUp() {
                                         <div>
                                             <input name='avatar' onChange={registerDataChange} type="file" style={{ margin: "5px 15px", width: "90%" }} className="registerImg" />
                                         </div>
+                                        <h6>file size is less then or 100kb</h6>
                                     </div>
                                     <Stack direction="row" spacing={2}>
                                         <Button variant="outlined" color="primary" style={{ margin: "-5px auto" }} type="submit">

@@ -601,6 +601,10 @@ h6 {
         min-height: 20vh;
     }
     .profileContianer {
+        width: 100%;
+        min-height: 80vh;
+        align-items: center;
+        justify-content: center;
         gap: 5rem;
         display: flex;
         flex-wrap: wrap;
