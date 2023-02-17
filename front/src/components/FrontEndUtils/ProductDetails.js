@@ -13,6 +13,7 @@ import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
 import { NEW_REVIEW_RESET } from '../../Redux/constants/productConstants';
 import AlertComp from '../AlertComp';
+import MetaData from './MetaData';
 
 const ProductDetails = (props) => {
     const [openAlert, setOpenAlert] = useState(false);
@@ -86,6 +87,7 @@ const ProductDetails = (props) => {
     }
     return (
         <>  
+            <MetaData title="products"/>
             {openAlert && <AlertComp message={msg} msgType={msgType} openAlert={setOpenAlert}/>}
             {loading ? <Loader /> : <div className='productDetailContainer'>
                 <div className='productImages'>

@@ -15,7 +15,6 @@ import store from './Redux/store'
 import { useSelector } from 'react-redux';
 import UserNavbar from "./components/FrontEndUtils/UserNavbar";
 import shopLogo from '../src/shopLogo.png'
-// import UpdateProfile from "./components/UpdateProfile";
 import ResetPasswordToken from "./components/FrontEndUtils/ResetPasswordToken";
 import Cart from "./components/FrontEndUtils/Cart";
 import { useState } from "react";
@@ -24,7 +23,6 @@ import axios from "axios";
 import MyOrders from "./components/FrontEndUtils/MyOrders";
 import OrderDetails from "./components/FrontEndUtils/OrderDetails";
 import DashBoard from "./components/layout/Admin/DashBoard";
-// import ProtectedRoute from "./components/ProtectedRoute";
 import ProductList from "./components/layout/Admin/ProductList";
 import NewProduct from "./components/layout/Admin/NewProduct";
 import UpdateProduct from "./components/layout/Admin/UpdateProduct";
@@ -33,6 +31,7 @@ import ProcessOrder from "./components/layout/Admin/ProcessOrder";
 import UsersList from "./components/layout/Admin/UsersList";
 import UpdateUser from "./components/layout/Admin/UpdateUser";
 import ItemsReview from "./components/layout/Admin/ItemsReview";
+import ErrorPage from "./components/ErrorPage";
 function App() {
   const { isAuthenticated, user, loading } = useSelector((state) => state.user);
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -66,6 +65,7 @@ function App() {
       <NavBar isAuth={isAuthenticated} />
       <Routes>
         <Route path='/' element={<Home shopLogo={shopLogo} />} />
+        <Route path='*' element={<ErrorPage/>} />
         <Route exact path='/products/:id' element={<ProductDetails />} />
         <Route path='/product' element={<Products categories={categories} />} />
         <Route path='/about' element={<About />} />

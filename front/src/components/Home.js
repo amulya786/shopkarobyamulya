@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from 'react';
 import Loader from './FrontEndUtils/Loader';
 import AlertComp from './AlertComp';
-
+import MetaData from './FrontEndUtils/MetaData';
 function Home({ shopLogo }) {
 
     const [openAlert, setOpenAlert] = React.useState(false);
@@ -28,6 +28,7 @@ function Home({ shopLogo }) {
 
     return (
         <>
+            <MetaData title="Shopkaro"/>
             <div id='home'></div>
             {openAlert && <AlertComp message={msg} msgType={msgType} openAlert={setOpenAlert}/>}
             {loading ? <Loader /> : <> <div className='welcomeBox'>
