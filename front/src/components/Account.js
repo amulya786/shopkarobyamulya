@@ -18,7 +18,7 @@ function Account({ user, loading }) {
       {openAlert && <AlertComp message={msg} msgType={"success"} openAlert={setOpenAlert}/>}
       {loading ? <Loader /> : <>
         {changePasswordToggle ? <div className='container'> <UpdatePassword open={setOpenAlert} alertmsg={setMsg} setTogg={setChangePasswordToggle}/> </div>:
-          <div className="profileContianer">
+          <div className="profileContianer container">
             <div className="profileAcc">
               <img src={user.avatar ? user.avatar.url : "/profile.jpg"} alt="no img" />
               <button className='editBtn' onClick={() => setEditToggle(!editToggle)} >{!editToggle ? "Edit Profile" : "Cancel Edit"}</button>

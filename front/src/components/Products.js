@@ -9,29 +9,19 @@ import Backdrop from '@mui/material/Backdrop';
 import Slider from '@mui/material/Slider';
 import Button from '@mui/material/Button';
 import AlertComp from './AlertComp';
-// import { useRef } from 'react';
-// const category = [
-//   "Laptop",
-//   "Footwear",
-//   "Bottoms",
-//   "Tops",
-//   "Attire",
-//   "Camera",
-//   "SmartPhone",
-// ];
+
 function Products({ categories }) {
 
   const [openAlert, setOpenAlert] = useState(false);
   const [msgType, setMsgType] = useState("");
   const [msg, setMsg] = useState("");
-  // const filter = useRef(null);
   const [backdrop, setBackdrop] = useState(!(window.innerWidth < 800));
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [keyword, setKeyword] = useState("");
   const [filter, setFilter] = useState("");
   const [value, setValue] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 100000]);
+  const [priceRange, setPriceRange] = useState([0, 0]);
   const [priceValue, setPriceValue] = useState(priceRange);
   const { loading, error, product, resultPerPage, resultAfterFilter } = useSelector(state => state.products);
 
@@ -52,6 +42,9 @@ function Products({ categories }) {
     setPriceRange(newValue);
   };
   const onSearch = () => {
+    if(keyword===""){
+      setPriceValue([0,0]);
+    }
     setKeyword(value);
   }
   const run = (event) => {
@@ -84,7 +77,7 @@ function Products({ categories }) {
         <div className="findbest" id="find">
           <p>Find All product</p>
           <input type="text" value={value} onChange={handler} className="searchBox" onKeyDown={(e) => run(e)} placeholder="search..." />
-          <button onClick={onSearch} className="searchBtn" >Search</button>
+          <Button onClick={onSearch} className="searchBtn" >Search</Button>
         </div>
         <div className="filter">
           <Button variant="outlined" onClick={BackDropWhenFilter}>Filter</Button>
@@ -98,20 +91,30 @@ function Products({ categories }) {
         <div className="container">
           <div className="filterBox" style={{ display: window.innerWidth < 600 ? backdrop ? "block" : "none" : "block" }}>
             <h3>Filters</h3>
-            <Slider
-              value={priceRange}
-              onChange={handleChange}
-              valueLabelDisplay="off"
-              min={0}
-              max={100000}
-            />
-            <h6>{priceRange[0]}------{priceRange[1]}</h6>
+            <div className="sliderBox">
+              <input type="number" name="priceRange0" onChange={(e) => setPriceRange([e.target.value, priceRange[1]])} value={priceRange[0]} id="" />
+              <Slider
+                value={priceRange}
+                onChange={handleChange}
+                valueLabelDisplay="off"
+                min={0}
+                max={1000000}
+              />
+              <input type="number" name="priceRange2" onChange={(e) => setPriceRange([priceRange[0], e.target.value])} value={priceRange[1]} id="" />
+            </div>
             <Button variant="contained" color="success" size="small" sx={{ margin: "0.5rem 0", width: "100%" }} onClick={onApplyFilter}>Apply</Button>
 
             {categories.map((item, i) =>
-              <Button key={i} color="primary" size="small" onClick={() => setFilter(item)} sx={{ margin: "0.1rem 0", width: "100%" }} >{item}</Button>
+              <Button key={i} color="primary" size="small" onClick={() => {
+                setFilter(item)
+                setBackdrop(!backdrop)
+              }} sx={{ margin: "0.1rem 0", width: "100%" }} >{item}</Button>
             )}
-            <Button color="error" size="small" onClick={() => setFilter("")} sx={{ margin: "0.1rem 0", width: "100%" }} >Remove filter</Button>
+            <Button color="error" size="small" onClick={() => {
+              setFilter("")
+              setPriceRange([0,0]);
+              setBackdrop(!backdrop)
+            }} sx={{ margin: "0.1rem 0", width: "100%" }} >Remove filter</Button>
           </div>
           {loading ? <Loader /> : <div className="productDisplayBox">
             {product && product.length > 0 ? <div className="displayProducts">
@@ -120,7 +123,7 @@ function Products({ categories }) {
                   <ProductCard key={i} product={product} />
                 )
               }
-            </div> : <h1 className='whenNothingPreview'>no products to review</h1>}
+            </div> : <h1 className='whenNothingPreview'>no products to found {keyword && "named "+keyword}</h1>}
           </div>
           }
         </div>

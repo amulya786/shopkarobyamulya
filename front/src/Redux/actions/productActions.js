@@ -35,7 +35,10 @@ export const getProduct = ( priceRange = [0, 0],keyword = "", category="", page 
         dispatch({
             type: All_PRODUCT_REQUEST
         });
-        let links = `/api/v1/products?keyword=${keyword}&page=${page}&price[gte]=${priceRange[0]}&price[lte]=${priceRange[1]}`;
+        let links = `/api/v1/products?keyword=${keyword}&page=${page}`;
+        if(priceRange[1] !== 0){
+            links = `/api/v1/products?keyword=${keyword}&page=${page}&price[gte]=${priceRange[0]}&price[lte]=${priceRange[1]}`;
+        }
         if(category){
             links = `/api/v1/products?&category=${category}&keyword=${keyword}&page=${page}`;
         }

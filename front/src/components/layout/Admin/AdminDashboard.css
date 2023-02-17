@@ -119,9 +119,6 @@
 }
 
 @media screen and (width<400px) {
-    .container {
-        display: block;
-    }
     .dashboardContainer h1 {
         position: absolute;
         top: 0;

@@ -99,12 +99,11 @@ h6 {
 }
 
 .container {
-    /* background-color: red; */
+    /* background-color: green; */
     width: 100%;
     display: flex;
-    align-items: center;
     min-height: 80vh;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
 }
 
@@ -321,6 +320,22 @@ h6 {
     margin: auto;
 }
 
+.findbest button {
+    background-color: tomato;
+    border: none;
+    width: 4rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    padding: 4px;
+}
+
+.findbest button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 99, 71, 0.767);
+    transform: scale();
+}
+
 .findbest p {
     margin: auto;
     width: fit-content;
@@ -354,21 +369,6 @@ h6 {
 .searchBox:focus {
     width: 40%;
     outline: none;
-}
-
-.searchBtn {
-    background-color: tomato;
-    border: none;
-    width: 5rem;
-    border-radius: 10px;
-    color: white;
-    font-weight: 500;
-    padding: 5px;
-}
-
-.searchBtn:hover {
-    background-color: rgba(255, 99, 71, 0.767);
-    transform: scale();
 }
 
 .pagination {
@@ -553,6 +553,9 @@ h6 {
 }
 
 @media screen and (max-width:756px) {
+    .container {
+        flex-direction: column;
+    }
     html {
         font-size: 80%;
     }
@@ -570,6 +573,18 @@ h6 {
         z-index: 2;
         width: 70%;
         height: 100px;
+    }
+    .sliderBox {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .sliderBox input {
+        margin: 0.5rem;
+        border: 0.2px solid rgba(0, 0, 0, 0.278);
+        border-radius: 5px;
+        font-size: 0.8rem;
+        width: 30%;
     }
     .productDisplayBox {
         border: none;
@@ -601,10 +616,6 @@ h6 {
         min-height: 20vh;
     }
     .profileContianer {
-        width: 100%;
-        min-height: 80vh;
-        align-items: center;
-        justify-content: center;
         gap: 5rem;
         display: flex;
         flex-wrap: wrap;
