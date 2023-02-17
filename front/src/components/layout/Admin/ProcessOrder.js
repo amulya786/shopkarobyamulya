@@ -15,7 +15,6 @@ import { UPDATE_ORDER_RESET } from '../../../Redux/constants/orderConstant';
 import AlertComp from '../../AlertComp';
 
 function ProcessOrder() {
-
     const [openAlert, setOpenAlert] = useState(false);
     const [msgType, setMsgType] = useState("");
     const [msg, setMsg] = useState("");
@@ -49,7 +48,10 @@ function ProcessOrder() {
             dispatch(clearErrors());
         }
         if (isUpdated) {
-            alert("Status Updated successfully");
+            // alert("Status Updated successfully");
+            setMsg("Status Updated successfully");
+            setMsgType("success");
+            setOpenAlert(true);
             dispatch({ type: UPDATE_ORDER_RESET });
 
         }

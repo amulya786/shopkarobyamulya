@@ -56,3 +56,9 @@
     display: flex;
     justify-content: center;
 }
+
+@media screen and (width<400px) {
+    .processingOrder {
+        flex-direction: column-reverse;
+    }
+}

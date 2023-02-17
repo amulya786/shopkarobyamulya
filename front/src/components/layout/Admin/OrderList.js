@@ -6,13 +6,14 @@ import EditIcon from '@mui/icons-material/Edit';
 import Delete from '@mui/icons-material/Delete'
 import SideBarForDashboard from './SideBarForDashboard'
 import { DataGrid } from '@mui/x-data-grid'
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 import './productList.css';
 import { } from '../../../Redux/constants/productConstants';
 import { deleteOrder, getAllOrders, clearErrors } from '../../../Redux/actions/orderAction';
 import { DELETE_ORDER_RESET } from '../../../Redux/constants/orderConstant';
 import AlertComp from '../../AlertComp';
 function OrderList() {
-
     const [openAlert, setOpenAlert] = useState(false);
     const [msgType, setMsgType] = useState("");
     const [msg, setMsg] = useState("");
@@ -119,13 +120,16 @@ function OrderList() {
                     <div className='productsListContainer'>
                         <h1 >All Orders</h1>
 
-                        {!loading && <DataGrid
+                        {!loading ? <DataGrid
                             rows={rows}
                             columns={columns}
                             pageSize={10}
                             disableSelectionOnClick
                             className='productListTable'
-                            autoHeight />
+                            autoHeight /> : <>
+                            <Box sx={{ width: '100%' }}>
+                                <LinearProgress />
+                            </Box></>
                         }
                     </div></> : <h1>deleting</h1>}
             </div>

@@ -10,6 +10,8 @@ import { DataGrid } from '@mui/x-data-grid'
 import './productList.css';
 import { DELETE_PRODUCT_RESET } from '../../../Redux/constants/productConstants';
 import AlertComp from '../../AlertComp';
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 function ProductList() {
 
     const [openAlert, setOpenAlert] = useState(false);
@@ -50,13 +52,21 @@ function ProductList() {
         dispatch(getAdminProduct());
     }, [error, dispatch, navigate, isDeleted, deleteError]);
     const coloums = [
-        { field: "sno", headerName: "No.", type: "number", minWidth: 10, flex: 0.2 },
+        { field: "sno", headerName: "No.", type: "number", minWidth: 30, flex: 0.5 },
+        {
+            field: 'image',
+            headerName: 'Image',
+            width: 20,
+            flex: 0.5,
+            editable: true,
+            renderCell: (params) => <img className='listImg' src={params.value} alt="no img" />,
+        },
         { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.5 },
         {
             field: "name",
             headerName: "Name",
-            minWidth: 200,
-            flex: 1,
+            minWidth: 100,
+            flex: 0.5,
         },
         {
             field: "stock",
@@ -69,7 +79,7 @@ function ProductList() {
             field: "price",
             headerName: "Price",
             type: "number",
-            minWidth: 200,
+            minWidth: 50,
             flex: 0.5,
         },
         {
@@ -77,7 +87,7 @@ function ProductList() {
             headerName: "Actions",
             type: "number",
             sortable: false,
-            minWidth: 150,
+            minWidth: 100,
             flex: 0.3,
             renderCell: (params) => {
                 return (
@@ -97,6 +107,7 @@ function ProductList() {
     products && products.forEach((item, i) => {
         rows.push({
             sno: i + 1,
+            image: item.images[0].url,
             id: item._id,
             stock: item.stock,
             price: item.price,
@@ -110,7 +121,7 @@ function ProductList() {
             <div className='container'>
                 {!deleting ? <><SideBarForDashboard />
                     <div className='productsListContainer'>
-                        <h1 >All products</h1>
+                        <h1 >All Products</h1>
 
                         {!loading && <DataGrid
                             rows={rows}
@@ -120,7 +131,10 @@ function ProductList() {
                             className='productListTable'
                             autoHeight />
                         }
-                    </div></> : <h1>deleting</h1>}
+                    </div></> :
+                    <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">
+                        <CircularProgress color="success" /><h3>deleting....</h3>
+                    </Stack>}
             </div>
         </>
     )

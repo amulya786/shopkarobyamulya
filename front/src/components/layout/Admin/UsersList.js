@@ -7,6 +7,8 @@ import Delete from '@mui/icons-material/Delete'
 import SideBarForDashboard from './SideBarForDashboard'
 import { DataGrid } from '@mui/x-data-grid'
 import './productList.css';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 import { deleteUser, getAllUsers, clearErrors } from '../../../Redux/actions/userAction';
 import { DELETE_USER_RESET } from '../../../Redux/constants/userConstants';
 import AlertComp from '../../AlertComp';
@@ -113,13 +115,15 @@ function UsersList() {
                     <div className='productsListContainer'>
                         <h1 >All Users</h1>
 
-                        {!loading && <DataGrid
+                        {!loading ? <DataGrid
                             rows={rows}
                             columns={coloums}
                             pageSize={10}
                             disableSelectionOnClick
                             className='productListTable'
-                            autoHeight />
+                            autoHeight /> : <Box sx={{ width: '100%' }}>
+                            <LinearProgress />
+                        </Box>
                         }
                     </div></> : <h1>deleting</h1>}
             </div>

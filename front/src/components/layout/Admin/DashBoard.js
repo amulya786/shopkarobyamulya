@@ -61,7 +61,7 @@ function DashBoard({open, alertmsg}) {
     const doughnutState = {
         labels: ["Out of stock", "In Stock"],
         datasets: [{
-            backgroundColor: ["yellow", "orange"],
+            backgroundColor: ["rgba(66, 189, 115, 0.653)", "rgba(7, 30, 131, 0.911)"],
             hoverBackgroundColor: ["red", "green"],
             data: [outOfStock, products && products.length - outOfStock]
         }]

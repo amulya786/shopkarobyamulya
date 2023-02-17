@@ -15,6 +15,7 @@
 }
 
 .productListTable div {
+    /* width: ; */
     border: none !important;
 }
 
@@ -35,6 +36,12 @@
     background-color: transparent;
     border: none;
     /* color: rgba(213, 77, 77, 0.726); */
+}
+
+.listImg {
+    width: 80%;
+    object-fit: contain;
+    /* border-radius: 50%; */
 }
 
 .productListTable button:hover {

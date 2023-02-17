@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { clearErrors, createOrder } from '../../Redux/actions/orderAction';
 import AlertComp from '../AlertComp';
+import LinearProgress from '@mui/material/LinearProgress';
 
 export default function PaymentForm({ Step }) {
   const [openAlert, setOpenAlert] = useState(false);
@@ -118,33 +119,37 @@ export default function PaymentForm({ Step }) {
 
       {openAlert && <AlertComp message={msg} msgType={msgType} openAlert={setOpenAlert} />}
       <React.Fragment>
-        <Typography variant="h6" gutterBottom>
+        <><Typography variant="h6" gutterBottom>
           Payment method
+          {paybtn && <Box sx={{ width: '40%',height:"5rem",zIndex:"5" ,position:"absolute",backgroundColor:"lightgray",padding:"1rem",top:"30%"}}>
+                <h4>  please don,t refresh the page or press the back button</h4>
+                <LinearProgress />
+              </Box>}
         </Typography>
-        <form onSubmit={(e) => submitHandler(e)}>
-          <Grid container justifyContent="center" paddingLeft="20%" rowSpacing={4} direction="column">
-            <Grid item xs={12} md={6} justifyContent="center">
-              <div className='cardTextContainer'><CreditCardIcon /><CardNumberElement className='paymentInput' /></div>
-              <p className='cardNoTest'>Use this Test Card No: 4000000000003220</p>
+          <form onSubmit={(e) => submitHandler(e)}>
+            <Grid container justifyContent="center" paddingLeft="20%" rowSpacing={4} direction="column">
+              <Grid item xs={12} md={6} justifyContent="center">
+                <div className='cardTextContainer'><CreditCardIcon /><CardNumberElement className='paymentInput' /></div>
+                <p className='cardNoTest'>Use this Test Card No: 4000000000003220</p>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <div className='cardTextContainer'><EventIcon /><CardExpiryElement className='paymentInput' /></div>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <div className='cardTextContainer'><VpnKeyIcon /><CardCvcElement className='paymentInput' /></div>
+              </Grid>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <div className='cardTextContainer'><EventIcon /><CardExpiryElement className='paymentInput' /></div>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <div className='cardTextContainer'><VpnKeyIcon /><CardCvcElement className='paymentInput' /></div>
-            </Grid>
-          </Grid>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button
-              variant="contained"
-              type="submit"
-              disabled={paybtn}
-              sx={{ mt: 3, ml: 1 }}
-            >
-              Pay -  ₹{orderInfo && orderInfo.total}
-            </Button>
-          </Box>
-        </form>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <Button
+                variant="contained"
+                type="submit"
+                disabled={paybtn}
+                sx={{ mt: 3, ml: 1 }}
+              >
+                Pay -  ₹{orderInfo && orderInfo.total}
+              </Button>
+            </Box>
+          </form></>
       </React.Fragment>
     </>
   );

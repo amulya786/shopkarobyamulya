@@ -13,8 +13,8 @@ import { Link } from 'react-router-dom';
 const SideBarForDashboard = () => {
     return (
         <div className='slideBarDashboard'>
-            <Link to="/">
-                <img src={logo} alt="Shopkaro" />
+            <Link id='dashboardLogo' to="/">
+                <img  src={logo} alt="Shopkaro" />
             </Link>
             <Link to="/admin/dashboard">
                 <p>
