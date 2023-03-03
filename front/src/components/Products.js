@@ -54,7 +54,8 @@ function Products({ categories }) {
   }
 
   useEffect(() => {
-    // console.warn("dispatch");
+    
+    window.scrollTo({top:0});
     if (error) {
       setMsg(error);
       setMsgType("error");

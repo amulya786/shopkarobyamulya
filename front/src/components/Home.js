@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import Loader from './FrontEndUtils/Loader';
 import AlertComp from './AlertComp';
 import MetaData from './FrontEndUtils/MetaData';
+import Carousel from 'react-material-ui-carousel'
+import { Button } from '@mui/material';
 function Home({ shopLogo }) {
 
     const [openAlert, setOpenAlert] = React.useState(false);
@@ -16,6 +18,7 @@ function Home({ shopLogo }) {
     const { loading, error, product } = useSelector(state => state.products);
 
     useEffect(() => {
+        window.scrollTo({top:0});
         if (error) {
             setMsg(error);
             setMsgType("error");
@@ -45,11 +48,47 @@ function Home({ shopLogo }) {
                     </div>
                 </div>
             </div>
+                <div className='displayCarosuel'>
+                    <Carousel interval={window.innerWidth<600?10000:9000} duration={2000}>
+                        <div className="bg C1">
+                            <div className='C2 CarosDetails'>
+                                <p>Womens collections</p>
+                                <h1>New season {(new Date().getFullYear())}</h1>
+                                <Button>ShopNow</Button>
+                            </div>
+                            <div className='C3 CarosImage'>
+                                <img src="womensCollection.png" alt="img" className='imgCaros' />
+                            </div>
+                        </div>
+                        <div className="bg C1">
+                            <div className='C2 CarosDetails'>
+                                <p>Electronics</p>
+                                <h1>Mega Sale</h1>
+                                <Button>ShopNow</Button>
+                            </div>
+                            <div className='C3 CarosImage'>
+                                <img src="Electronics.png" alt="img" className='imgCaros' />
+                            </div>
+                        </div>
+                        <div className="bg C1">
+                            <div className='C2 CarosDetails'>
+                                <p>Mens New Season</p>
+                                <h1>Jackets & Coats</h1>
+                                <Button>ShopNow</Button>
+                            </div>
+                            <div className='C3 CarosImage'>
+                                <img src="mens.png" alt="img" className='imgCaros' />
+                            </div>
+                        </div>
+                        {/* <div className="bg C2"></div> */}
+                        {/* <div className="bg C3"></div> */}
+                    </Carousel>
+                </div>
                 <div className="findbest" id="find"><p>Find some best items</p></div>
                 <div className="container">
                     <div className="displayProducts">
                         {
-                            product && product.map((product, i) => <Product key={i} product={product} />)
+                            product && product.map((product, i) =>  <Product key={i} product={product} />)
                         }
                     </div>
                 </div></>

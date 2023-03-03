@@ -50,6 +50,21 @@ p {
     color: tomato
 }
 
-
-/* 
-@media screen and (max-width:394px) {} */
+@media screen and (max-width:394px) {
+    .productCard:nth-child(even) {
+        animation: run1 2s ease-in-out;
+    }
+    .productCard:nth-child(odd) {
+        animation: run2 1.5s ease-in-out;
+    }
+    @keyframes run1 {
+        0% {
+            transform: translateX(200px);
+        }
+    }
+    @keyframes run2 {
+        0% {
+            transform: translateX(-200px);
+        }
+    }
+}

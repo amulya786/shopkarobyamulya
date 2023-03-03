@@ -44,6 +44,7 @@ const ProductDetails = (props) => {
         setquantity(quantity - 1);
     }
     useEffect(() => {
+        window.scrollTo({top:0});
         if (error) {
             setMsg(error);
             setMsgType("error");

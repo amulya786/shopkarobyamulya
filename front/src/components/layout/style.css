@@ -14,6 +14,105 @@
     color: rgba(26, 45, 165, 0.89);
 }
 
+.displayCarosuel {
+    width: 100%;
+    height: 65vh;
+    background-color: rgb(234, 221, 221);
+}
+
+.bg {
+    margin: 0;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    background-color: rgb(234, 221, 221);
+}
+
+
+/* animation start for carosuel */
+
+.CarosDetails h1 {
+    transition: all 4s;
+    letter-spacing: 0.2rem;
+    font-size: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+    z-index: 1;
+    animation: h1Word 4s ease-in-out;
+}
+
+@keyframes h1Word {
+    0% {
+        letter-spacing: 2rem;
+        transform: translateX(-500px) rotateZ(360deg);
+    }
+    100% {
+        transform: translateX(0px) rotateZ(0deg);
+    }
+}
+
+.CarosDetails p {
+    width: 60%;
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 200;
+    animation: pWord 2s ease-in-out;
+}
+
+@keyframes pWord {
+    0% {
+        transform: translateX(1000px);
+        color: transparent;
+    }
+}
+
+.CarosDetails button {
+    border: 1px solid;
+    font-size: 1rem;
+    font-weight: 2rem;
+    color: white;
+    background: rgb(98, 98, 236);
+    margin: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    animation: shopbutton 5s ease-in-out;
+}
+
+@keyframes shopbutton {
+    0% {
+        color: transparent;
+        transform: rotateZ(360deg);
+    }
+}
+
+.CarosDetails {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    min-height: 60vh;
+    padding: 1rem;
+}
+
+.CarosImage {
+    display: flex;
+    justify-content: center;
+    object-fit: contain;
+    text-align: center;
+    width: 50%;
+    min-height: 60vh;
+    overflow: visible;
+    animation: imgAnime 3s ease-in-out;
+}
+
+@keyframes imgAnime {
+    0% {
+        transform: translateY(-500rem);
+    }
+}
+
 #home {
     z-index: -1;
     background-image: linear-gradient(to bottom, rgba(43, 43, 45, 0.944), rgba(43, 40, 42, 0.656)), url('https://res.cloudinary.com/dzq6sixij/image/upload/v1676491217/ImagesUsed/2593125_ptelui.jpg');
@@ -288,6 +387,7 @@ h6 {
 }
 
 .welcomeBox {
+    background-color: rgba(255, 255, 255, 0.641);
     display: flex;
     justify-content: center;
     width: 100%;
@@ -646,6 +746,9 @@ h6 {
         left: 2rem;
         /* border: 1px solid rgba(128, 128, 128, 0.468); */
         /* background-color: rgb(57, 218, 32); */
+    }
+    .CarosImage {
+        width: 90%;
     }
     /* Address form validation Submit Button */
     .submitAddBtn button {
